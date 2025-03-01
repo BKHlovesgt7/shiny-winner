@@ -59,50 +59,6 @@ Resources
 		class:noBackground
 		hidden when 0
 		
-Shinies
-	**luckyBunny
-		on click:log Woop
-		movement:onRight moveLeft fade bounce:0.05
-		frequency:60
-		frequency variation:30
-		icon:stuff/luckyBunny.png
-		class:bigButton
-		on click:
-			$boost=1
-			# Ensure 'clover' is defined properly or provide a default value
-			if (have clover) $boost=4
-			if (chance(25%))
-				# get at least 7, or between 1 and 3 minutes of our bunny production
-				$amount=max(7,random(bunnies:ps*60*1,bunnies:ps*60*3))*$boost
-				toast The lucky bunny grants you<//><b>[$amount] bunnies</b>.
-				yield $amount bunnies
-			else
-				$amount=1*$boost
-				toast The lucky bunny grants you<//><b>[$amount] golden carrot[s?$amount]</b>!
-				yield $amount goldenCarrot
-			end
-		end
-	*goldenBunny
-		on click:log Jackpot!
-		movement:onLeft moveRight fade bounce:0.1
-		frequency:120
-		frequency variation:60
-		icon:stuff/goldenBunny.png
-		class:bigButton
-		on click:
-			$boost=1
-			if (have goldenClover) $boost=4
-			if (chance(10%))
-				$amount=max(1,random(goldenCarrots:ps*60*1,goldenCarrots:ps*60*3))*$boost
-				toast The golden bunny grants you<//><b>[$amount] golden carrots</b>.
-				yield $amount goldenCarrot
-			else
-				$amount=1*$boost
-				toast The golden bunny grants you<//><b>[$amount] rabbit foot[s?$amount]</b>!
-				yield $amount rabbitFoot
-			end
-		end
-
 Buildings
 	*TEMPLATE
 		on click:anim glow
