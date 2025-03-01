@@ -60,7 +60,7 @@ Resources
 		hidden when 0
 		
 Shinies
-	*luckyBunny
+	**luckyBunny
 		on click:log Woop
 		movement:onRight moveLeft fade bounce:0.05
 		frequency:60
@@ -69,9 +69,10 @@ Shinies
 		class:bigButton
 		on click:
 			$boost=1
+			# Ensure 'clover' is defined properly or provide a default value
 			if (have clover) $boost=4
 			if (chance(25%))
-				//get at least 7, or between 1 and 3 minutes of our bunny production
+				# get at least 7, or between 1 and 3 minutes of our bunny production
 				$amount=max(7,random(bunnies:ps*60*1,bunnies:ps*60*3))*$boost
 				toast The lucky bunny grants you<//><b>[$amount] bunnies</b>.
 				yield $amount bunnies
@@ -81,7 +82,6 @@ Shinies
 				yield $amount goldenCarrot
 			end
 		end
-		
 	*goldenBunny
 		on click:log Jackpot!
 		movement:onLeft moveRight fade bounce:0.1
