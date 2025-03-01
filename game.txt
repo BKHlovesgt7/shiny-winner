@@ -51,6 +51,13 @@ Resources
 		icon:icons[0,2]
 		class:noBackground
 		hidden when 0
+
+	*clover
+		name:Clover
+		desc:A lucky clover that boosts bunny production.
+		icon:icons[0,3]
+		class:noBackground
+		hidden when 0
 		
 Shinies
 	*luckyBunny
