@@ -1,4 +1,3 @@
-```vim help file
 Let's make a game!
 	name:Bunny Clicker
 	by:Orteil
